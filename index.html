@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20220519122103">
+	<link rel="stylesheet" href="css/style.min.css?_v=20220519142306">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -167,7 +167,9 @@
 					<div class="contacts__text">Want to know more or just chat?<br>
 						You are welcome!</div>
 					<div class="contacts__button">
-						<button data-popup="#popup" type="button" class="button">Send message</button>
+						<div class="button__wrapper">
+							<button data-popup="#popup" type="button" class="button">Send message</button>
+						</div>
 					</div>
 					<div class="contacts__icons">
 						<ul class="soc">
@@ -205,7 +207,7 @@
 		<div class="popup__wrapper">
 			<div class="popup__content">
 				<div class="popup__button">
-					<button data-close type="button" class="popup__close">Close</button>
+					<button data-close type="button" class="popup__close">X</button>
 				</div>
 				<div class="popup__form">
 					<form action="files/sendmail/sendmail.php" method="POST" class="form">
@@ -218,7 +220,9 @@
 							<textarea name="message" data-autoheight data-no-validate placeholder="Your message" class="textarea form__input"></textarea>
 						</div>
 						<div class="form__button">
-							<button type="submit" class="button">Send</button>
+							<div class="button__wrapper">
+								<button type="submit" class="button">Send</button>
+							</div>
 						</div>
 					</form>
 				</div>
@@ -226,7 +230,7 @@
 		</div>
 
 	</div>
-	<script src="js/app.min.js?_v=20220519122103"></script>
+	<script src="js/app.min.js?_v=20220519142306"></script>
 </body>
 
 </html>
