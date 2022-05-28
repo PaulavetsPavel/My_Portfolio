@@ -229,6 +229,10 @@ body::after {
   font-size: 22px;
 }
 
+.popup__close > button {
+  background-color: #fff;
+}
+
 .form__item {
   font-size: 22px;
   font-weight: 700;
@@ -260,11 +264,17 @@ body::after {
       -ms-flex-pack: end;
           justify-content: flex-end;
   padding: 10px 0 0 0;
-  margin: 0 -90px 0 0;
 }
 
 .textarea {
   height: 100px;
+}
+
+.button__container {
+  width: 100%;
+  text-align: right;
+  margin: 0;
+  padding: 0;
 }
 
 [class*=-ibg] {
@@ -294,63 +304,107 @@ body::after {
 }
 
 .button {
-  display: block;
-  -webkit-transform: translate(-50%, -50%);
-      -ms-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  width: 180px;
-  height: 50px;
-  background-color: #262626;
-  border: 4px solid #000;
-  border-radius: 25px;
-  font-size: 16px;
-  font-weight: 700;
-  letter-spacing: 1.5px;
-  color: #f6f6f6;
+  background: #242323;
+  color: #fff;
+  border: 4px solid #070707;
+  border-radius: 50px;
+  padding: 0.8rem 2rem;
+  outline: none;
+  cursor: pointer;
+  position: relative;
+  -webkit-transition: 0.2s ease-in-out;
+  -o-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  letter-spacing: 2px;
   text-transform: uppercase;
-  -webkit-box-shadow: inset 0 0 30px rgb(0, 0, 0);
-          box-shadow: inset 0 0 30px rgb(0, 0, 0);
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.button__wrapper {
+  display: inline-block;
+  position: relative;
+  width: 230px;
+  height: 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.button-typewriter button {
+  width: 100%;
+  height: 100%;
+}
+
+.button-typewriter p {
+  -webkit-animation: typing 4s steps(12) infinite;
+          animation: typing 4s steps(12) infinite;
+  display: inline-block;
   overflow: hidden;
+  white-space: nowrap;
 }
 
-.button::before {
-  content: "";
-  position: absolute;
-  left: -5px;
-  top: 0;
-  width: 70%;
-  height: 100%;
-  background: rgba(255, 255, 255, 0.1);
-  -webkit-transition: 0.5s;
-  -o-transition: 0.5s;
-  transition: 0.5s;
-  -webkit-transform: skewX(-15deg);
-      -ms-transform: skewX(-15deg);
-          transform: skewX(-15deg);
+.button-typewriter .button__wrapper:hover p {
+  -webkit-animation: blink 0.3s infinite;
+          animation: blink 0.3s infinite;
 }
 
-.button::after {
-  content: "";
-  position: absolute;
-  left: -70px;
-  top: 0;
-  width: 50px;
-  height: 100%;
-  background: rgba(255, 255, 255, 0.1);
-  -webkit-transform: skewX(-15deg);
-      -ms-transform: skewX(-15deg);
-          transform: skewX(-15deg);
-  -webkit-transition: 0.8s;
-  -o-transition: 0.8s;
-  transition: 0.8s;
-  -webkit-transition-delay: 0.3s;
-       -o-transition-delay: 0.3s;
-          transition-delay: 0.3s;
+@-webkit-keyframes typing {
+  0% {
+    width: 0;
+  }
+
+  50% {
+    width: 100%;
+  }
+
+  55%, 65%, 75% {
+    opacity: 1;
+  }
+
+  60%, 70% {
+    opacity: 0;
+  }
+
+  80% {
+    width: 100%;
+  }
+
+  100% {
+    width: 0;
+  }
 }
 
-.button:hover::before,
-.button:hover::after {
-  left: 210px;
+@keyframes typing {
+  0% {
+    width: 0;
+  }
+
+  50% {
+    width: 100%;
+  }
+
+  55%, 65%, 75% {
+    opacity: 1;
+  }
+
+  60%, 70% {
+    opacity: 0;
+  }
+
+  80% {
+    width: 100%;
+  }
+
+  100% {
+    width: 0;
+  }
 }
 
 .header__menu {
@@ -632,12 +686,7 @@ body::after {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-}
-
-.button__wrapper {
-  width: 180px;
-  height: 100%;
-  margin: 25px 0 0 180px;
+  margin: 0 0 30px 0;
 }
 
 .sticky__block {
@@ -3670,5 +3719,9 @@ button.swiper-pagination-bullet {
 
   .contacts {
     padding: 50px 0;
+  }
+
+  .book {
+    display: none;
   }
 }
