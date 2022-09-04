@@ -734,22 +734,22 @@ body::after {
   outline-offset: 3px;
 }
 
-.no-webp .react:before{
+.react:before{
   background-image: url("img/portfolio/React.png"); }
 
-.no-webp .pizza:before{
+.pizza:before{
   background-image: url("img/portfolio/Pizzeria.png"); }
 
-.no-webp .sedona:before{
+.sedona:before{
   background-image: url("img/portfolio/Sedona.png"); }
 
-.no-webp .blog:before{
+.blog:before{
   background-image: url("img/portfolio/Blog.png"); }
 
-.no-webp .shop:before{
+.shop:before{
   background-image: url("img/portfolio/Delivery_food.png"); }
 
-.no-webp .space:before{
+.space:before{
   background-image: url("img/portfolio/Space_X.png"); }
 
 .contacts {
