@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20220528175625">
+	<link rel="stylesheet" href="css/style.min.css?_v=20220904223157">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -42,7 +42,7 @@
 				<div class="main__container">
 					<div class="main__info">
 						<h1 class="main__title"> Павел <br>Павловец</h1>
-						<div class="main__description">Front-end разработчик <br> 38 лет, Жодино, Беларусь</div>
+						<div class="main__description">Front-end разработчик <br> Жодино, Беларусь</div>
 						<div class="main__lang">
 							<a href="./index.html">eng</a>
 							<span>|</span>
@@ -55,35 +55,62 @@
 					</div>
 				</div>
 			</section>
+
+			<section class='skills'>
+				<div class='skills__container'>
+					<div class='skills__title title'>Навыки</div>
+					<ul class='skills__items'>
+						<li class='skills__item'>
+							<figure><img src='img/icons/html.png' alt='HTML' title='HTML'>
+								<figcaption>HTML5</figcaption>
+							</figure>
+						</li>
+						<li class='skills__item'>
+							<figure><img src='img/icons/css.png' alt='CSS' title='CSS'>
+								<figcaption>CSS3</figcaption>
+							</figure>
+						</li>
+						<li class='skills__item'>
+							<figure><img src='img/icons/js.png' alt='JavaScript' title='JavaScript'>
+								<figcaption>JavaScript</figcaption>
+							</figure>
+						</li>
+						<li class='skills__item'>
+							<figure><img src='img/icons/sass.png' alt='SASS' title='SASS'>
+								<figcaption>SASS</figcaption>
+							</figure>
+						</li>
+						<li class='skills__item'>
+							<figure><img src='img/icons/react.png' alt='React' title='React'>
+								<figcaption>React</figcaption>
+							</figure>
+						</li>
+						<li class='skills__item'>
+							<figure><img src='img/icons/redux.png' alt='Redux' title='Redux'>
+								<figcaption>Redux</figcaption>
+							</figure>
+						</li>
+						<li class='skills__item'>
+							<figure><img src='img/icons/git.png' alt='Git' title='Git'>
+								<figcaption>Git</figcaption>
+							</figure>
+						</li>
+					</ul>
+				</div>
+			</section>
 			<section class="about-me">
 				<div class="about-me__container">
 					<div class="about-me__title title">Обо мне</div>
 					<div class="about-me__info">
-						<p>Привет, меня зовут Павел, мне 38 лет, я живу в городе Жодино, Минской области, и Я Front-end
-							разработчик.
-							Я интересуюсь WEb-разработкой и всем , что с ней связано.</p>
-
-						<p>Я учусь в БГУ на Механо-математическом факультете. Также я изучил несколько различных курсов
-							по Web-разработке.</p>
-
-						<p>Готовно к реализации отличных проектов с замечательными людьми.</p>
+						<p>Привет, меня зовут Павел, и я Front-end разработчик.</p>
+						<p>Я интересуюсь WEb-разработкой и всем, что с ней связано.</p>
+						<p>Я самостоятельно изучил несколько курсов по верстке сайтов.
+							Сейчас учусь в БГУ на Механо-математическом факультете по специальности Веб-программирование.
+						<p>В сфере Frontend-разработки больше всего мне нравится работать с библиотекой React.</p>
+						<p>Мне нравится принимать участие во всех этапах проекта, чтобы иметь четкое представление о
+							масштабах и направлениях задач.</p>
+						<p>Готов к реализации отличных проектов с замечательными людьми.</p>
 					</div>
-				</div>
-			</section>
-			<section class="skills">
-				<div class="skills__container">
-					<div class="skills__title title">Навыки</div>
-					<ul class="skills__items">
-						<li class="skills__item">
-							<picture><source srcset="img/icons/html.webp" type="image/webp"><img src="img/icons/html.png" alt="HTML" title="HTML"></picture>
-						</li>
-						<li class="skills__item"><picture><source srcset="img/icons/css.webp" type="image/webp"><img src="img/icons/css.png" alt="CSS" title="CSS"></picture></li>
-						<li class="skills__item"><picture><source srcset="img/icons/js.webp" type="image/webp"><img src="img/icons/js.png" alt="JavaScript" title="JavaScript"></picture></li>
-						<li class="skills__item"><picture><source srcset="img/icons/sass.webp" type="image/webp"><img src="img/icons/sass.png" alt="SASS" title="SASS"></picture></li>
-						<li class="skills__item"><picture><source srcset="img/icons/react.webp" type="image/webp"><img src="img/icons/react.png" alt="React" title="React"></picture></li>
-						<li class="skills__item"><picture><source srcset="img/icons/redux.webp" type="image/webp"><img src="img/icons/redux.png" alt="Redux" title="Redux"></picture></li>
-						<li class="skills__item"><picture><source srcset="img/icons/git.webp" type="image/webp"><img src="img/icons/git.png" alt="Git" title="Git"></picture></li>
-					</ul>
 				</div>
 			</section>
 			<section class="portfolio">
@@ -93,59 +120,56 @@
 						<div class="portfolio__wrapper swiper-wrapper">
 							<!-- Слайд -->
 							<div class="portfolio__slide swiper-slide">
-								<picture><source srcset="img/portfolio/React.webp" type="image/webp"><img src="img/portfolio/React.png" alt=""></picture><a href="https://paulavetspavel.github.io/Social_network_test/" target="_blank" class="portfolio__link">Сайт социальной сети на React</a>
+								<div class="card react">
+									<div class="card_content">
+										<h2 class="card_title">React</h2>
+										<p class="card_copy"> Сайт социальной сети на React </p>
+										<a href="https://paulavetspavel.github.io/Social_network_test/" target="_blank" class="card_btn">Перейти</a>
+									</div>
+								</div>
 							</div>
 							<div class="portfolio__slide swiper-slide">
-								<picture><source srcset="img/portfolio/Pizzeria.webp" type="image/webp"><img src="img/portfolio/Pizzeria.png" alt=""></picture><a href="https://paulavetspavel.github.io/Pizza/" target="_blank" class="portfolio__link">Лендинг пиццерии </a>
+								<div class="card pizza">
+									<div class="card_content">
+										<h2 class="card_title">Пиццерия</h2>
+										<p class="card_copy"> Лендинг пиццерии </p>
+										<a href="https://paulavetspavel.github.io/Pizza/" target="_blank" class="card_btn">Перейти</a>
+									</div>
+								</div>
 							</div>
 							<div class="portfolio__slide swiper-slide">
-								<picture><source srcset="img/portfolio/Sedona.webp" type="image/webp"><img src="img/portfolio/Sedona.png" alt=""></picture><a href="https://paulavetspavel.github.io/New_Sedona/" target="_blank" class="portfolio__link">Сайт города Седона</a>
+								<div class="card sedona">
+									<div class="card_content">
+										<h2 class="card_title">Седона</h2>
+										<p class="card_copy"> Сайт города Седона </p>
+										<a href="https://paulavetspavel.github.io/New_Sedona/" target="_blank" class="card_btn">Перейти</a>
+									</div>
+								</div>
 							</div>
 							<div class="portfolio__slide swiper-slide">
-								<picture><source srcset="img/portfolio/Blog.webp" type="image/webp"><img src="img/portfolio/Blog.png" alt=""></picture><a href="https://paulavetspavel.github.io/testPortfolio/" target="_blank" class="portfolio__link">Блог</a>
+								<div class="card blog">
+									<div class="card_content">
+										<h2 class="card_title">Блог</h2>
+										<p class="card_copy"> Макет блога </p>
+										<a href="https://paulavetspavel.github.io/testPortfolio/" target="_blank" class="card_btn">Перейти</a>
+									</div>
+								</div>
 							</div>
 							<div class="portfolio__slide swiper-slide">
-								<picture><source srcset="img/portfolio/Delivery_food.webp" type="image/webp"><img src="img/portfolio/Delivery_food.png" alt=""></picture><a href="https://paulavetspavel.github.io/DeliveryFood/" target="_blank" class="portfolio__link">Сайт онлайн магазина</a>
+								<div class="card shop">
+									<div class="card_content">
+										<h2 class="card_title">Магазин</h2>
+										<p class="card_copy"> Сайт онлайн магазина </p>
+										<a href="https://paulavetspavel.github.io/DeliveryFood/" target="_blank" class="card_btn">Перейти</a>
+									</div>
+								</div>
 							</div>
 							<div class="portfolio__slide swiper-slide">
-								<picture><source srcset="img/portfolio/Space_X.webp" type="image/webp"><img src="img/portfolio/Space_X.png" alt=""></picture><a href="https://paulavetspavel.github.io/SpaceX/" target="_blank" class="portfolio__link">Гланая страница сайта Space X </a>
-							</div>
-							<div class="portfolio__slide swiper-slide book">
-								<div class="book__wrapper">
-									<div class="book__imgLoader"></div>
-									<div class="book__container">
-										<h3 class="book__title">
-											Turning pages<br>with css
-										</h3>
-										<div class="book__credit">
-											* Images loaded randomly from Picsum.photos
-										</div>
-										<div class="book__book">
-											<div class="book__gap"></div>
-											<div class="book__pages">
-												<div class="book__page"></div>
-												<div class="book__page"></div>
-												<div class="book__page"></div>
-												<div class="book__page"></div>
-												<div class="book__page"></div>
-												<div class="book__page"></div>
-											</div>
-											<div class="book__flips">
-												<div class="book__flip flip1">
-													<div class="book__flip flip2">
-														<div class="book__flip flip3">
-															<div class="book__flip flip4">
-																<div class="book__flip flip5">
-																	<div class="book__flip flip6">
-																		<div class="book__flip flip7"></div>
-																	</div>
-																</div>
-															</div>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
+								<div class="card space">
+									<div class="card_content">
+										<h2 class="card_title">Space X</h2>
+										<p class="card_copy"> Гланая страница сайта Space X </p>
+										<a href="https://paulavetspavel.github.io/SpaceX/" target="_blank" class="card_btn">Перейти</a>
 									</div>
 								</div>
 							</div>
@@ -160,20 +184,15 @@
 				<div class="contacts__container">
 					<div class="contacts__title title">Контакты</div>
 					<div class="contacts__text">Хотите узнать больше или пообщаться?<br>
-						Добро пожаловать!</div>
+						Добро пожаловать!
+					</div>
 					<div class="contacts__button">
-						<div class="button-typewriter">
-							<div class="button__wrapper">
-								<button data-popup="#popup" type="button" class="button">
-									<p>Сообщение</p>
-								</button>
-							</div>
-						</div>
+						<button data-popup="#popup" type="button" class="custom-btn btn">Сообщение</button>
 					</div>
 					<div class="contacts__icons">
-						<ul class="soc">
-							<li>
-								<a class="icon-13 github" href="https://github.com/PaulavetsPavel" title="GitHub">
+						<ul class="contacts__list">
+							<li class="list_item">
+								<a class="icon-13 github" href="https://github.com/PaulavetsPavel">
 									<div class="ir">
 										<svg viewbox="0 0 512 512" preserveAspectRatio="xMidYMid meet" width="512" height="512">
 											<path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z">
@@ -181,9 +200,10 @@
 										</svg>
 									</div>
 								</a>
+								<span class="list_item-name">Github</span>
 							</li>
-							<li>
-								<a class="icon-17 linkedin" href="https://www.linkedin.com/in/pavel-paulavets-40244a23a/" title="LinkedIn">
+							<li class="list_item">
+								<a class="icon-17 linkedin" href="https://www.linkedin.com/in/pavel-paulavets-40244a23a/">
 									<div class="ir">
 										<svg viewbox="0 0 512 512" preserveAspectRatio="xMidYMid meet" width="512" height="512">
 											<path d="M186.4 142.4c0 19-15.3 34.5-34.2 34.5 -18.9 0-34.2-15.4-34.2-34.5 0-19 15.3-34.5 34.2-34.5C171.1 107.9 186.4 123.4 186.4 142.4zM181.4 201.3h-57.8V388.1h57.8V201.3zM273.8 201.3h-55.4V388.1h55.4c0 0 0-69.3 0-98 0-26.3 12.1-41.9 35.2-41.9 21.3 0 31.5 15 31.5 41.9 0 26.9 0 98 0 98h57.5c0 0 0-68.2 0-118.3 0-50-28.3-74.2-68-74.2 -39.6 0-56.3 30.9-56.3 30.9v-25.2H273.8z">
@@ -191,6 +211,7 @@
 										</svg>
 									</div>
 								</a>
+								<span class="list_item-name">LinkedIn</span>
 							</li>
 						</ul>
 					</div>
@@ -199,6 +220,8 @@
 			<div class="sticky__block">
 				<a href="#" data-goto=".main" class="sticky__link"><picture><source srcset="img/icons/arrow-up.webp" type="image/webp"><img src="img/icons/arrow-up.png" alt=""></picture></a>
 			</div>
+
+
 		</main>
 
 	</div>
@@ -209,19 +232,24 @@
 					<button data-close type="button" class="popup__close">X</button>
 				</div>
 				<div class="popup__form">
-					<form action="files/sendmail/sendmail.php" method="POST" class="form">
+					<form action="../componetns/sendmail/sendmail.php" method="POST" class="form">
 						<div class="form__item">
 							<div class="form__sub-title">Ваше имя</div>
-							<input autocomplete="off" data-no-validate type="text" name="username" placeholder="Ваше имя" class="input form__input">
+							<label>
+								<input autocomplete="off" data-no-validate type="text" name="username" placeholder="Ваше имя" class="input form__input">
+							</label>
 						</div>
 						<div class="form__item">
 							<div class="form__sub-title">Ваше сообщение</div>
-							<textarea name="message" data-autoheight data-no-validate placeholder="Ваше сообщение" class="textarea form__input"></textarea>
+							<label>
+								<textarea class="textarea form__input" data-autoheight data-no-validate name="message" placeholder="Ваше сообщение"></textarea>
+							</label>
 						</div>
 						<div class="form__button">
 							<div class="button__container">
-								<button type="submit" class="button">Отправить</button>
+								<button type="submit" class="custom-btn btn" id="cancelDefaultBtn">Отправить</button>
 							</div>
+							<p>*временно не работает</p>
 						</div>
 					</form>
 				</div>
@@ -229,7 +257,7 @@
 		</div>
 
 	</div>
-	<script src="js/app.min.js?_v=20220528175625"></script>
+	<script src="js/app.min.js?_v=20220904223157"></script>
 </body>
 
 </html>

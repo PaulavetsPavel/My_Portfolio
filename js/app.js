@@ -3642,6 +3642,10 @@
             }
         }
         flsModules.popup = new Popup({});
+        const cancelShipment = document.getElementById("cancelDefaultBtn");
+        cancelShipment.addEventListener("click", (function(event) {
+            event.preventDefault();
+        }), false);
         let gotoBlock = (targetBlock, noHeader = false, speed = 500, offsetTop = 0) => {
             const targetBlockElement = document.querySelector(targetBlock);
             if (targetBlockElement) {

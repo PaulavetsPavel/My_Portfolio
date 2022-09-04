@@ -2,8 +2,6 @@
 
 @import url(https://fonts.googleapis.com/css?family=Cuprum:regular,700);
 
-@import url(https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap);
-
 @charset "UTF-8";
 
 * {
@@ -257,13 +255,17 @@ body::after {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   padding: 10px 0 0 0;
+}
+
+.form__button p {
+  font-size: 12px;
+  margin: 5px 0 0 0;
+  text-align: right;
 }
 
 .textarea {
@@ -300,111 +302,67 @@ body::after {
   font-weight: 700;
   font-size: 34px;
   text-align: center;
-  letter-spacing: 1.3;
+  letter-spacing: 1.3px;
 }
 
-.button {
-  background: #242323;
-  color: #fff;
-  border: 4px solid #070707;
-  border-radius: 50px;
-  padding: 0.8rem 2rem;
-  outline: none;
-  cursor: pointer;
-  position: relative;
-  -webkit-transition: 0.2s ease-in-out;
-  -o-transition: 0.2s ease-in-out;
-  transition: 0.2s ease-in-out;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  font-weight: 700;
-  font-size: 16px;
-}
-
-.button__wrapper {
-  display: inline-block;
-  position: relative;
-  width: 230px;
+.btn {
+  width: 280px;
   height: 60px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  color: #fff;
+  border-radius: 50px;
+  padding: 10px 25px;
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 1.1px;
+  background: transparent;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  -webkit-box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5), 7px 7px 20px 0 rgba(0, 0, 0, 0.1), 4px 4px 5px 0 rgba(0, 0, 0, 0.1);
+          box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5), 7px 7px 20px 0 rgba(0, 0, 0, 0.1), 4px 4px 5px 0 rgba(0, 0, 0, 0.1);
+  outline: none;
 }
 
-.button-typewriter button {
+.custom-btn {
+  border: none;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.custom-btn:after {
+  position: absolute;
+  content: " ";
+  z-index: -1;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
+  background-color: #1fd1f9;
+  background-image: -o-linear-gradient(135deg, #1fd1f9 0%, #b621fe 74%);
+  background-image: linear-gradient(315deg, #1fd1f9 0%, #b621fe 74%);
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 
-.button-typewriter p {
-  -webkit-animation: typing 4s steps(12) infinite;
-          animation: typing 4s steps(12) infinite;
-  display: inline-block;
-  overflow: hidden;
-  white-space: nowrap;
+.custom-btn:hover {
+  background: transparent;
+  -webkit-box-shadow: 4px 4px 6px 0 rgba(255, 255, 255, 0.5), -4px -4px 6px 0 rgba(116, 125, 136, 0.2), inset -4px -4px 6px 0 rgba(255, 255, 255, 0.5), inset 4px 4px 6px 0 rgba(116, 125, 136, 0.3);
+          box-shadow: 4px 4px 6px 0 rgba(255, 255, 255, 0.5), -4px -4px 6px 0 rgba(116, 125, 136, 0.2), inset -4px -4px 6px 0 rgba(255, 255, 255, 0.5), inset 4px 4px 6px 0 rgba(116, 125, 136, 0.3);
+  color: #fff;
 }
 
-.button-typewriter .button__wrapper:hover p {
-  -webkit-animation: blink 0.3s infinite;
-          animation: blink 0.3s infinite;
-}
-
-@-webkit-keyframes typing {
-  0% {
-    width: 0;
-  }
-
-  50% {
-    width: 100%;
-  }
-
-  55%, 65%, 75% {
-    opacity: 1;
-  }
-
-  60%, 70% {
-    opacity: 0;
-  }
-
-  80% {
-    width: 100%;
-  }
-
-  100% {
-    width: 0;
-  }
-}
-
-@keyframes typing {
-  0% {
-    width: 0;
-  }
-
-  50% {
-    width: 100%;
-  }
-
-  55%, 65%, 75% {
-    opacity: 1;
-  }
-
-  60%, 70% {
-    opacity: 0;
-  }
-
-  80% {
-    width: 100%;
-  }
-
-  100% {
-    width: 0;
-  }
+.custom-btn:hover:after {
+  -webkit-transform: scale(2) rotate(180deg);
+  -ms-transform: scale(2) rotate(180deg);
+      transform: scale(2) rotate(180deg);
+  -webkit-box-shadow: 4px 4px 6px 0 rgba(255, 255, 255, 0.5), -4px -4px 6px 0 rgba(116, 125, 136, 0.2), inset -4px -4px 6px 0 rgba(255, 255, 255, 0.5), inset 4px 4px 6px 0 rgba(116, 125, 136, 0.3);
+          box-shadow: 4px 4px 6px 0 rgba(255, 255, 255, 0.5), -4px -4px 6px 0 rgba(116, 125, 136, 0.2), inset -4px -4px 6px 0 rgba(255, 255, 255, 0.5), inset 4px 4px 6px 0 rgba(116, 125, 136, 0.3);
 }
 
 .header__menu {
@@ -513,6 +471,8 @@ body::after {
 
 .main__description {
   font-family: "Cuprum";
+  font-size: 1.45rem;
+  line-height: 1.3;
   -ms-flex-item-align: end;
       align-self: flex-end;
 }
@@ -538,7 +498,7 @@ body::after {
 
 .main__photo {
   width: 100%;
-  height: 450px;
+  height: 600px;
 }
 
 .main__photo img {
@@ -549,12 +509,11 @@ body::after {
 }
 
 .about-me {
-  background-color: #f6f6f6;
   padding: 120px 0 105px 0;
 }
 
 .about-me__title {
-  margin: 0 0 10px 0;
+  margin: 0 0 30px 0;
 }
 
 .about-me__info {
@@ -566,26 +525,25 @@ body::after {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
 }
 
 .about-me p {
-  max-width: 480px;
-  margin: 20px 0;
-  text-align: center;
-  line-height: 1.4;
+  margin: 5px 0;
+  line-height: 1.1;
 }
 
 .about-me p:last-child {
-  margin: 20px 0 0 0;
+  margin: 5px 0 0 0;
 }
 
 .skills {
+  background-color: #f6f6f6;
   padding: 90px 0 110px 0;
 }
 
@@ -612,13 +570,36 @@ body::after {
 
 .skills__item {
   -webkit-box-flex: 0;
-      -ms-flex: 0 1 90px;
-          flex: 0 1 90px;
+      -ms-flex: 0 1 100px;
+          flex: 0 1 100px;
   height: 90px;
 }
 
-.skills__item img {
+.skills__item figure {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.skills__item figure img {
   max-width: 100%;
+}
+
+.skills__item figure figcaption {
+  margin: 10px 0 0 0;
+  font-size: 20px;
+  font-weight: bold;
+  color: #4b405e;
 }
 
 .portfolio {
@@ -634,33 +615,142 @@ body::after {
   max-width: 100%;
 }
 
-.portfolio__slide {
-  max-width: 100%;
-}
-
-.portfolio__slide img {
-  width: 100%;
-  -o-object-fit: contain;
-     object-fit: contain;
-  border-radius: 8px;
+.card {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
   overflow: hidden;
-}
-
-.portfolio__link {
-  display: block;
+  padding: 1rem 1rem 0.1rem 1rem;
+  width: 100%;
+  height: 500px;
   text-align: center;
-  margin: 25px 0 0 0;
-  font-weight: 700;
-  -webkit-transition: -webkit-text-decoration 0.3s ease 0s;
-  transition: -webkit-text-decoration 0.3s ease 0s;
-  -o-transition: text-decoration 0.3s ease 0s;
-  transition: text-decoration 0.3s ease 0s;
-  transition: text-decoration 0.3s ease 0s, -webkit-text-decoration 0.3s ease 0s;
+  color: whitesmoke;
+  background-color: whitesmoke;
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), 0 2px 2px rgba(0, 0, 0, 0.1), 0 4px 4px rgba(0, 0, 0, 0.1), 0 8px 8px rgba(0, 0, 0, 0.1), 0 16px 16px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), 0 2px 2px rgba(0, 0, 0, 0.1), 0 4px 4px rgba(0, 0, 0, 0.1), 0 8px 8px rgba(0, 0, 0, 0.1), 0 16px 16px rgba(0, 0, 0, 0.1);
 }
 
-.portfolio__link:hover {
-  text-decoration: underline;
+.card:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 110%;
+  background-size: cover;
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  -webkit-transition: -webkit-transform 1050ms cubic-bezier(0.19, 1, 0.22, 1);
+  transition: -webkit-transform 1050ms cubic-bezier(0.19, 1, 0.22, 1);
+  -o-transition: transform 1050ms cubic-bezier(0.19, 1, 0.22, 1);
+  transition: transform 1050ms cubic-bezier(0.19, 1, 0.22, 1);
+  transition: transform 1050ms cubic-bezier(0.19, 1, 0.22, 1), -webkit-transform 1050ms cubic-bezier(0.19, 1, 0.22, 1);
+  pointer-events: none;
 }
+
+.card:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 200%;
+  pointer-events: none;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(hsla(0deg, 0%, 0%, 0)), color-stop(11.7%, hsla(0deg, 0%, 0%, 0.009)), color-stop(22.1%, hsla(0deg, 0%, 0%, 0.034)), color-stop(31.2%, hsla(0deg, 0%, 0%, 0.072)), color-stop(39.4%, hsla(0deg, 0%, 0%, 0.123)), color-stop(46.6%, hsla(0deg, 0%, 0%, 0.182)), color-stop(53.1%, hsla(0deg, 0%, 0%, 0.249)), color-stop(58.9%, hsla(0deg, 0%, 0%, 0.32)), color-stop(64.3%, hsla(0deg, 0%, 0%, 0.394)), color-stop(69.3%, hsla(0deg, 0%, 0%, 0.468)), color-stop(74.1%, hsla(0deg, 0%, 0%, 0.54)), color-stop(78.8%, hsla(0deg, 0%, 0%, 0.607)), color-stop(83.6%, hsla(0deg, 0%, 0%, 0.668)), color-stop(88.7%, hsla(0deg, 0%, 0%, 0.721)), color-stop(94.1%, hsla(0deg, 0%, 0%, 0.762)), to(hsla(0deg, 0%, 0%, 0.79)));
+  background-image: -o-linear-gradient(top, hsla(0deg, 0%, 0%, 0) 0%, hsla(0deg, 0%, 0%, 0.009) 11.7%, hsla(0deg, 0%, 0%, 0.034) 22.1%, hsla(0deg, 0%, 0%, 0.072) 31.2%, hsla(0deg, 0%, 0%, 0.123) 39.4%, hsla(0deg, 0%, 0%, 0.182) 46.6%, hsla(0deg, 0%, 0%, 0.249) 53.1%, hsla(0deg, 0%, 0%, 0.32) 58.9%, hsla(0deg, 0%, 0%, 0.394) 64.3%, hsla(0deg, 0%, 0%, 0.468) 69.3%, hsla(0deg, 0%, 0%, 0.54) 74.1%, hsla(0deg, 0%, 0%, 0.607) 78.8%, hsla(0deg, 0%, 0%, 0.668) 83.6%, hsla(0deg, 0%, 0%, 0.721) 88.7%, hsla(0deg, 0%, 0%, 0.762) 94.1%, hsla(0deg, 0%, 0%, 0.79) 100%);
+  background-image: linear-gradient(to bottom, hsla(0deg, 0%, 0%, 0) 0%, hsla(0deg, 0%, 0%, 0.009) 11.7%, hsla(0deg, 0%, 0%, 0.034) 22.1%, hsla(0deg, 0%, 0%, 0.072) 31.2%, hsla(0deg, 0%, 0%, 0.123) 39.4%, hsla(0deg, 0%, 0%, 0.182) 46.6%, hsla(0deg, 0%, 0%, 0.249) 53.1%, hsla(0deg, 0%, 0%, 0.32) 58.9%, hsla(0deg, 0%, 0%, 0.394) 64.3%, hsla(0deg, 0%, 0%, 0.468) 69.3%, hsla(0deg, 0%, 0%, 0.54) 74.1%, hsla(0deg, 0%, 0%, 0.607) 78.8%, hsla(0deg, 0%, 0%, 0.668) 83.6%, hsla(0deg, 0%, 0%, 0.721) 88.7%, hsla(0deg, 0%, 0%, 0.762) 94.1%, hsla(0deg, 0%, 0%, 0.79) 100%);
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+  -webkit-transition: -webkit-transform 1400ms cubic-bezier(0.19, 1, 0.22, 1);
+  transition: -webkit-transform 1400ms cubic-bezier(0.19, 1, 0.22, 1);
+  -o-transition: transform 1400ms cubic-bezier(0.19, 1, 0.22, 1);
+  transition: transform 1400ms cubic-bezier(0.19, 1, 0.22, 1);
+  transition: transform 1400ms cubic-bezier(0.19, 1, 0.22, 1), -webkit-transform 1400ms cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.card_content {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  padding: 1rem;
+  -webkit-transition: -webkit-transform 700ms cubic-bezier(0.19, 1, 0.22, 1);
+  transition: -webkit-transform 700ms cubic-bezier(0.19, 1, 0.22, 1);
+  -o-transition: transform 700ms cubic-bezier(0.19, 1, 0.22, 1);
+  transition: transform 700ms cubic-bezier(0.19, 1, 0.22, 1);
+  transition: transform 700ms cubic-bezier(0.19, 1, 0.22, 1), -webkit-transform 700ms cubic-bezier(0.19, 1, 0.22, 1);
+  z-index: 1;
+}
+
+.card_content > * + * {
+  margin-top: 1rem;
+}
+
+.card_title {
+  font-size: 1.6rem;
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+.card_copy {
+  font-size: 1.125rem;
+  font-style: italic;
+  line-height: 1.35;
+}
+
+.card_btn {
+  cursor: pointer;
+  margin-top: 1.5rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.65rem;
+  font-weight: bold;
+  letter-spacing: 0.025rem;
+  text-transform: uppercase;
+  color: #ffffff;
+  background-color: #000000;
+  border: none;
+}
+
+.card_btn:hover {
+  background-color: #0d0d0d;
+}
+
+.card_btn:focus {
+  outline: 1px dashed yellow;
+  outline-offset: 3px;
+}
+
+.no-webp .react:before{
+  background-image: url("img/portfolio/React.png"); }
+
+.no-webp .pizza:before{
+  background-image: url("img/portfolio/Pizzeria.png"); }
+
+.no-webp .sedona:before{
+  background-image: url("img/portfolio/Sedona.png"); }
+
+.no-webp .blog:before{
+  background-image: url("img/portfolio/Blog.png"); }
+
+.no-webp .shop:before{
+  background-image: url("img/portfolio/Delivery_food.png"); }
+
+.no-webp .space:before{
+  background-image: url("img/portfolio/Space_X.png"); }
 
 .contacts {
   padding: 110px 0 120px 0;
@@ -687,6 +777,91 @@ body::after {
       -ms-flex-pack: center;
           justify-content: center;
   margin: 0 0 30px 0;
+}
+
+.contacts__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-size: 0;
+  list-style: none;
+  margin: 0 auto;
+  text-align: center;
+  max-width: 140px;
+}
+
+.contacts__list a,
+.contacts__list svg {
+  display: block;
+}
+
+.contacts__list a {
+  height: 50px;
+  width: 50px;
+}
+
+.list_item {
+  list-style-type: none;
+  -ms-flex-preferred-size: 60px;
+      flex-basis: 60px;
+  min-height: 60px;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+  color: #555;
+  -webkit-transform: translateY(0);
+      -ms-transform: translateY(0);
+          transform: translateY(0);
+  -webkit-transition: opacity 0.2s ease, -webkit-transform 0.5s ease;
+  transition: opacity 0.2s ease, -webkit-transform 0.5s ease;
+  -o-transition: transform 0.5s ease, opacity 0.2s ease;
+  transition: transform 0.5s ease, opacity 0.2s ease;
+  transition: transform 0.5s ease, opacity 0.2s ease, -webkit-transform 0.5s ease;
+  cursor: pointer;
+}
+
+.list_item:hover {
+  color: var(--highlight);
+  -webkit-transform: translateY(-6px);
+      -ms-transform: translateY(-6px);
+          transform: translateY(-6px);
+}
+
+.list_item:hover .list_item-name {
+  -webkit-transform: translateY(20px);
+      -ms-transform: translateY(20px);
+          transform: translateY(20px);
+  opacity: 1;
+}
+
+.list_item-name {
+  margin: 60px 0 0 0;
+  font-size: 18px;
+  font-weight: 700;
+  position: absolute;
+  -webkit-transform: translate(0, 100px);
+      -ms-transform: translate(0, 100px);
+          transform: translate(0, 100px);
+  -webkit-transition: opacity 0.2s ease, -webkit-transform 0.5s ease;
+  transition: opacity 0.2s ease, -webkit-transform 0.5s ease;
+  -o-transition: transform 0.5s ease, opacity 0.2s ease;
+  transition: transform 0.5s ease, opacity 0.2s ease;
+  transition: transform 0.5s ease, opacity 0.2s ease, -webkit-transform 0.5s ease;
+  opacity: 0;
 }
 
 .sticky__block {
@@ -735,42 +910,6 @@ body::after {
   width: 100%;
   top: 0;
   left: 0;
-}
-
-.soc {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  font-size: 0;
-  list-style: none;
-  margin: 0 auto;
-  text-align: center;
-  max-width: 100%;
-}
-
-.soc li {
-  display: inline-block;
-  margin: 0 10px 0 0;
-}
-
-.soc li:last-child {
-  margin: 0;
-}
-
-.soc a,
-.soc svg {
-  display: block;
-}
-
-.soc a {
-  height: 50px;
-  width: 50px;
 }
 
 .icon-32:hover,
@@ -1073,1412 +1212,6 @@ body::after {
   background: hsl(24deg, 70%, 50%);
 }
 
-.book__wrapper {
-  font-family: "Indie Flower", cursive;
-  background-color: #eee;
-  color: #555;
-  text-align: center;
-  padding: 2em 0;
-}
-
-.book__imgLoader {
-  position: fixed;
-  -webkit-animation: preLoad 1s steps(1);
-          animation: preLoad 1s steps(1);
-  width: 1px;
-  height: 1px;
-}
-
-@-webkit-keyframes preLoad {
-  0% {
-    background-image: url("https://picsum.photos/420/300?random=1");
-  }
-
-  10% {
-    background-image: url("https://picsum.photos/420/300?random=2");
-  }
-
-  20% {
-    background-image: url("https://picsum.photos/420/300?random=3");
-  }
-
-  30% {
-    background-image: url("https://picsum.photos/420/300?random=4");
-  }
-
-  40% {
-    background-image: url("https://picsum.photos/420/300?random=5");
-  }
-
-  100% {
-    display: none;
-  }
-}
-
-@keyframes preLoad {
-  0% {
-    background-image: url("https://picsum.photos/420/300?random=1");
-  }
-
-  10% {
-    background-image: url("https://picsum.photos/420/300?random=2");
-  }
-
-  20% {
-    background-image: url("https://picsum.photos/420/300?random=3");
-  }
-
-  30% {
-    background-image: url("https://picsum.photos/420/300?random=4");
-  }
-
-  40% {
-    background-image: url("https://picsum.photos/420/300?random=5");
-  }
-
-  100% {
-    display: none;
-  }
-}
-
-.book__container {
-  position: relative;
-  width: 420px;
-  border: #fff solid 2px;
-  border-radius: 4px;
-  height: 420px;
-}
-
-.book__title {
-  position: absolute;
-  top: 45px;
-  left: 0;
-  width: 100%;
-  font-size: 2em;
-  font-weight: normal;
-  line-height: 1;
-}
-
-.book__credit {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  font-size: 0.9em;
-  text-align: left;
-}
-
-.book__book {
-  position: relative;
-  -webkit-perspective: 630px;
-          perspective: 630px;
-  -webkit-perspective-origin: center 50px;
-          perspective-origin: center 50px;
-  -webkit-transform: scale(1.2);
-      -ms-transform: scale(1.2);
-          transform: scale(1.2);
-  -webkit-filter: drop-shadow(0px 10px 5px rgba(0, 0, 0, 0.25));
-          filter: drop-shadow(0px 10px 5px rgba(0, 0, 0, 0.25));
-}
-
-.book__page {
-  width: 210px;
-  height: 300px;
-  background-color: #bbb;
-  position: absolute;
-  top: 0px;
-  right: 50%;
-  -webkit-transform-origin: 100% 100%;
-      -ms-transform-origin: 100% 100%;
-          transform-origin: 100% 100%;
-  border: solid #555 2px;
-  background-size: 420px 300px;
-  background-position: center;
-  -webkit-transform-style: preserve-3d;
-          transform-style: preserve-3d;
-}
-
-.book__page:nth-child(1) {
-  -webkit-transform: rotateX(60deg) rotateY(3deg);
-          transform: rotateX(60deg) rotateY(3deg);
-}
-
-.book__page:nth-child(2) {
-  -webkit-transform: rotateX(60deg) rotateY(4.5deg);
-          transform: rotateX(60deg) rotateY(4.5deg);
-}
-
-.book__page:nth-child(3) {
-  -webkit-transform: rotateX(60deg) rotateY(6deg);
-          transform: rotateX(60deg) rotateY(6deg);
-  -webkit-animation: nextPage 25s infinite -24s steps(1);
-          animation: nextPage 25s infinite -24s steps(1);
-  background-size: 420px 300px;
-  background-position: -2px -2px;
-}
-
-.book__page:nth-child(4) {
-  -webkit-transform: rotateX(60deg) rotateY(177deg);
-          transform: rotateX(60deg) rotateY(177deg);
-}
-
-.book__page:nth-child(5) {
-  -webkit-transform: rotateX(60deg) rotateY(175.5deg);
-          transform: rotateX(60deg) rotateY(175.5deg);
-}
-
-.book__page:nth-child(6) {
-  -webkit-transform: rotateX(60deg) rotateY(174deg);
-          transform: rotateX(60deg) rotateY(174deg);
-  overflow: hidden;
-}
-
-.book__page:nth-child(6)::after {
-  content: "";
-  width: 210px;
-  height: 300px;
-  position: absolute;
-  top: 0px;
-  right: 0%;
-  -webkit-transform-origin: center;
-      -ms-transform-origin: center;
-          transform-origin: center;
-  -webkit-transform: rotateY(180deg);
-          transform: rotateY(180deg);
-  -webkit-animation: nextPage 25s -20s infinite steps(1);
-          animation: nextPage 25s -20s infinite steps(1);
-  background-size: 420px 300px;
-  background-position: 100% -2px;
-}
-
-@-webkit-keyframes nextPage {
-  0% {
-    background-image: url("https://picsum.photos/420/300?random=1");
-  }
-
-  20% {
-    background-image: url("https://picsum.photos/420/300?random=2");
-  }
-
-  40% {
-    background-image: url("https://picsum.photos/420/300?random=3");
-  }
-
-  60% {
-    background-image: url("https://picsum.photos/420/300?random=4");
-  }
-
-  80% {
-    background-image: url("https://picsum.photos/420/300?random=5");
-  }
-}
-
-@keyframes nextPage {
-  0% {
-    background-image: url("https://picsum.photos/420/300?random=1");
-  }
-
-  20% {
-    background-image: url("https://picsum.photos/420/300?random=2");
-  }
-
-  40% {
-    background-image: url("https://picsum.photos/420/300?random=3");
-  }
-
-  60% {
-    background-image: url("https://picsum.photos/420/300?random=4");
-  }
-
-  80% {
-    background-image: url("https://picsum.photos/420/300?random=5");
-  }
-}
-
-.book__gap {
-  width: 10px;
-  height: 300px;
-  background: none;
-  -webkit-transform: rotateX(60deg);
-          transform: rotateX(60deg);
-  -webkit-transform-origin: bottom;
-      -ms-transform-origin: bottom;
-          transform-origin: bottom;
-  position: absolute;
-  top: 0px;
-  left: calc(50% - 5px);
-}
-
-.book__gap::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  -webkit-transform: translate(-50%, 50%);
-      -ms-transform: translate(-50%, 50%);
-          transform: translate(-50%, 50%);
-  background-color: #555;
-  width: 10px;
-  height: 5px;
-  border-radius: 50%;
-}
-
-.book__pages,
-.book__flips {
-  -webkit-transform-style: preserve-3d;
-          transform-style: preserve-3d;
-}
-
-.book__flip {
-  width: 32px;
-  height: 300px;
-  position: absolute;
-  top: 0px;
-  -webkit-transform-origin: 100% 100%;
-      -ms-transform-origin: 100% 100%;
-          transform-origin: 100% 100%;
-  right: 100%;
-  border: solid #555;
-  border-width: 2px 0px;
-  -webkit-perspective: 4200px;
-          perspective: 4200px;
-  -webkit-perspective-origin: center;
-          perspective-origin: center;
-  -webkit-transform-style: preserve-3d;
-          transform-style: preserve-3d;
-  background-size: 420px 300px;
-}
-
-.book__flip::after {
-  content: "";
-  position: absolute;
-  top: 0px;
-  right: 0%;
-  width: 100%;
-  height: 100%;
-  -webkit-transform-origin: center;
-      -ms-transform-origin: center;
-          transform-origin: center;
-  background-size: 420px 300px;
-}
-
-.book__flip.flip1 {
-  right: 50%;
-  -webkit-animation: flip1 5s infinite ease-in-out;
-          animation: flip1 5s infinite ease-in-out;
-  border-width: 2px 2px 2px 0;
-}
-
-.book__flip.flip1::after {
-  -webkit-animation: nextFlip1 25s -20s infinite steps(1);
-          animation: nextFlip1 25s -20s infinite steps(1);
-}
-
-.book__flip:not(.flip1) {
-  right: calc(100% - 2px);
-  top: -2px;
-  -webkit-transform-origin: right;
-      -ms-transform-origin: right;
-          transform-origin: right;
-  -webkit-animation: flip2 5s ease-in-out infinite;
-          animation: flip2 5s ease-in-out infinite;
-}
-
-.book__flip.flip2::after {
-  -webkit-animation: nextFlip2 25s -20s infinite steps(1);
-          animation: nextFlip2 25s -20s infinite steps(1);
-}
-
-.book__flip.flip3::after {
-  -webkit-animation: nextFlip3 25s -20s infinite steps(1);
-          animation: nextFlip3 25s -20s infinite steps(1);
-}
-
-.book__flip.flip4::after {
-  -webkit-animation: nextFlip4 25s -20s infinite steps(1);
-          animation: nextFlip4 25s -20s infinite steps(1);
-}
-
-.book__flip.flip5::after {
-  -webkit-animation: nextFlip5 25s -20s infinite steps(1);
-          animation: nextFlip5 25s -20s infinite steps(1);
-}
-
-.book__flip.flip6::after {
-  -webkit-animation: nextFlip6 25s -20s infinite steps(1);
-          animation: nextFlip6 25s -20s infinite steps(1);
-}
-
-.book__flip.flip7::after {
-  -webkit-animation: nextFlip7 25s -20s infinite steps(1);
-          animation: nextFlip7 25s -20s infinite steps(1);
-}
-
-.book__flip.flip7 {
-  width: 30px;
-  border-width: 2px 0px 2px 2px;
-}
-
-.book__flip.flip7::after {
-  -webkit-animation: nextFlip7 25s -20s infinite steps(1);
-          animation: nextFlip7 25s -20s infinite steps(1);
-}
-
-@-webkit-keyframes flip1 {
-  0%, 20% {
-    -webkit-transform: rotateX(60deg) rotateY(6deg);
-            transform: rotateX(60deg) rotateY(6deg);
-  }
-
-  80%, 100% {
-    -webkit-transform: rotateX(60deg) rotateY(174deg);
-            transform: rotateX(60deg) rotateY(174deg);
-  }
-}
-
-@keyframes flip1 {
-  0%, 20% {
-    -webkit-transform: rotateX(60deg) rotateY(6deg);
-            transform: rotateX(60deg) rotateY(6deg);
-  }
-
-  80%, 100% {
-    -webkit-transform: rotateX(60deg) rotateY(174deg);
-            transform: rotateX(60deg) rotateY(174deg);
-  }
-}
-
-@-webkit-keyframes flip2 {
-  0%, 20% {
-    -webkit-transform: rotateY(0deg) translateY(0px);
-            transform: rotateY(0deg) translateY(0px);
-  }
-
-  50% {
-    -webkit-transform: rotateY(-15deg) translateY(0px);
-            transform: rotateY(-15deg) translateY(0px);
-  }
-}
-
-@keyframes flip2 {
-  0%, 20% {
-    -webkit-transform: rotateY(0deg) translateY(0px);
-            transform: rotateY(0deg) translateY(0px);
-  }
-
-  50% {
-    -webkit-transform: rotateY(-15deg) translateY(0px);
-            transform: rotateY(-15deg) translateY(0px);
-  }
-}
-
-@-webkit-keyframes nextFlip1 {
-  0% {
-    background-image: url("https://picsum.photos/420/300?random=1");
-    background-position: -178px -2px;
-    -webkit-transform: rotateY(0deg);
-            transform: rotateY(0deg);
-  }
-
-  10% {
-    background-image: url("https://picsum.photos/420/300?random=2");
-    background-position: -210px -2px;
-    -webkit-transform: rotateY(180deg);
-            transform: rotateY(180deg);
-  }
-
-  20% {
-    background-image: url("https://picsum.photos/420/300?random=2");
-    background-position: -178px -2px;
-    -webkit-transform: rotateY(0deg);
-            transform: rotateY(0deg);
-  }
-
-  30% {
-    background-image: url("https://picsum.photos/420/300?random=3");
-    background-position: -210px -2px;
-    -webkit-transform: rotateY(180deg);
-            transform: rotateY(180deg);
-  }
-
-  40% {
-    background-image: url("https://picsum.photos/420/300?random=3");
-    background-position: -178px -2px;
-    -webkit-transform: rotateY(0deg);
-            transform: rotateY(0deg);
-  }
-
-  50% {
-    background-image: url("https://picsum.photos/420/300?random=4");
-    background-position: -210px -2px;
-    -webkit-transform: rotateY(180deg);
-            transform: rotateY(180deg);
-  }
-
-  60% {
-    background-image: url("https://picsum.photos/420/300?random=4");
-    background-position: -178px -2px;
-    -webkit-transform: rotateY(0deg);
-            transform: rotateY(0deg);
-  }
-
-  70% {
-    background-image: url("https://picsum.photos/420/300?random=5");
-    background-position: -210px -2px;
-    -webkit-transform: rotateY(180deg);
-            transform: rotateY(180deg);
-  }
-
-  80% {
-    background-image: url("https://picsum.photos/420/300?random=5");
-    background-position: -178px -2px;
-    -webkit-transform: rotateY(0deg);
-            transform: rotateY(0deg);
-  }
-
-  90% {
-    background-image: url("https://picsum.photos/420/300?random=1");
-    background-position: -210px -2px;
-    -webkit-transform: rotateY(180deg);
-            transform: rotateY(180deg);
-  }
-}
-
-@keyframes nextFlip1 {
-  0% {
-    background-image: url("https://picsum.photos/420/300?random=1");
-    background-position: -178px -2px;
-    -webkit-transform: rotateY(0deg);
-            transform: rotateY(0deg);
-  }
-
-  10% {
-    background-image: url("https://picsum.photos/420/300?random=2");
-    background-position: -210px -2px;
-    -webkit-transform: rotateY(180deg);
-            transform: rotateY(180deg);
-  }
-
-  20% {
-    background-image: url("https://picsum.photos/420/300?random=2");
-    background-position: -178px -2px;
-    -webkit-transform: rotateY(0deg);
-            transform: rotateY(0deg);
-  }
-
-  30% {
-    background-image: url("https://picsum.photos/420/300?random=3");
-    background-position: -210px -2px;
-    -webkit-transform: rotateY(180deg);
-            transform: rotateY(180deg);
-  }
-
-  40% {
-    background-image: url("https://picsum.photos/420/300?random=3");
-    background-position: -178px -2px;
-    -webkit-transform: rotateY(0deg);
-            transform: rotateY(0deg);
-  }
-
-  50% {
-    background-image: url("https://picsum.photos/420/300?random=4");
-    background-position: -210px -2px;
-    -webkit-transform: rotateY(180deg);
-            transform: rotateY(180deg);
-  }
-
-  60% {
-    background-image: url("https://picsum.photos/420/300?random=4");
-    background-position: -178px -2px;
-    -webkit-transform: rotateY(0deg);
-            transform: rotateY(0deg);
-  }
-
-  70% {
-    background-image: url("https://picsum.photos/420/300?random=5");
-    background-position: -210px -2px;
-    -webkit-transform: rotateY(180deg);
-            transform: rotateY(180deg);
-  }
-
-  80% {
-    background-image: url("https://picsum.photos/420/300?random=5");
-    background-position: -178px -2px;
-    -webkit-transform: rotateY(0deg);
-            transform: rotateY(0deg);
-  }
-
-  90% {
-    background-image: url("https://picsum.photos/420/300?random=1");
-    background-position: -210px -2px;
-    -webkit-transform: rotateY(180deg);
-            transform: rotateY(180deg);
-  }
-}
-
-@-webkit-keyframes nextFlip2 {
-  0% {
-    background-image: url("https://picsum.photos/420/300?random=1");
-    background-position: -148px -2px;
-    -webkit-transform: rotateY(0deg);
-            transform: rotateY(0deg);
-  }
-
-  10.5% {
-    background-image: url("https://picsum.photos/420/300?random=2");
-    background-position: -238px -2px;
-    -webkit-transform: rotateY(180deg);
-            transform: rotateY(180deg);
-  }
-
-  20% {
-    background-image: url("https://picsum.photos/420/300?random=2");
-    background-position: -148px -2px;
-    -webkit-transform: rotateY(0deg);
-            transform: rotateY(0deg);
-  }
-
-  30.5% {
-    background-image: url("https://picsum.photos/420/300?random=3");
-    background-position: -238px -2px;
-    -webkit-transform: rotateY(180deg);
-            transform: rotateY(180deg);
-  }
-
-  40% {
-    background-image: url("https://picsum.photos/420/300?random=3");
-    background-position: -148px -2px;
-    -webkit-transform: rotateY(0deg);
-            transform: rotateY(0deg);
-  }
-
-  50.5% {
-    background-image: url("https://picsum.photos/420/300?random=4");
-    background-position: -238px -2px;
-    -webkit-transform: rotateY(180deg);
-            transform: rotateY(180deg);
-  }
-
-  60% {
-    background-image: url("https://picsum.photos/420/300?random=4");
-    background-position: -148px -2px;
-    -webkit-transform: rotateY(0deg);
-            transform: rotateY(0deg);
-  }
-
-  70.5% {
-    background-image: url("https://picsum.photos/420/300?random=5");
-    background-position: -238px -2px;
-    -webkit-transform: rotateY(180deg);
-            transform: rotateY(180deg);
-  }
-
-  80% {
-    background-image: url("https://picsum.photos/420/300?random=5");
-    background-position: -148px -2px;
-    -webkit-transform: rotateY(0deg);
-            transform: rotateY(0deg);
-  }
-
-  90.5% {
-    background-image: url("https://picsum.photos/420/300?random=1");
-    background-position: -238px -2px;
-    -webkit-transform: rotateY(180deg);
-            transform: rotateY(180deg);
-  }
-}
-
-@keyframes nextFlip2 {
-  0% {
-    background-image: url("https://picsum.photos/420/300?random=1");
-    background-position: -148px -2px;
-    -webkit-transform: rotateY(0deg);
-            transform: rotateY(0deg);
-  }
-
-  10.5% {
-    background-image: url("https://picsum.photos/420/300?random=2");
-    background-position: -238px -2px;
-    -webkit-transform: rotateY(180deg);
-            transform: rotateY(180deg);
-  }
-
-  20% {
-    background-image: url("https://picsum.photos/420/300?random=2");
-    background-position: -148px -2px;
-    -webkit-transform: rotateY(0deg);
-            transform: rotateY(0deg);
-  }
-
-  30.5% {
-    background-image: url("https://picsum.photos/420/300?random=3");
-    background-position: -238px -2px;
-    -webkit-transform: rotateY(180deg);
-            transform: rotateY(180deg);
-  }
-
-  40% {
-    background-image: url("https://picsum.photos/420/300?random=3");
-    background-position: -148px -2px;
-    -webkit-transform: rotateY(0deg);
-            transform: rotateY(0deg);
-  }
-
-  50.5% {
-    background-image: url("https://picsum.photos/420/300?random=4");
-    background-position: -238px -2px;
-    -webkit-transform: rotateY(180deg);
-            transform: rotateY(180deg);
-  }
-
-  60% {
-    background-image: url("https://picsum.photos/420/300?random=4");
-    background-position: -148px -2px;
-    -webkit-transform: rotateY(0deg);
-            transform: rotateY(0deg);
-  }
-
-  70.5% {
-    background-image: url("https://picsum.photos/420/300?random=5");
-    background-position: -238px -2px;
-    -webkit-transform: rotateY(180deg);
-            transform: rotateY(180deg);
-  }
-
-  80% {
-    background-image: url("https://picsum.photos/420/300?random=5");
-    background-position: -148px -2px;
-    -webkit-transform: rotateY(0deg);
-            transform: rotateY(0deg);
-  }
-
-  90.5% {
-    background-image: url("https://picsum.photos/420/300?random=1");
-    background-position: -238px -2px;
-    -webkit-transform: rotateY(180deg);
-            transform: rotateY(180deg);
-  }
-}
-
-@-webkit-keyframes nextFlip3 {
-  0% {
-    background-image: url("https://picsum.photos/420/300?random=1");
-    background-position: -118px -2px;
-    -webkit-transform: rotateY(0deg);
-            transform: rotateY(0deg);
-  }
-
-  11% {
-    background-image: url("https://picsum.photos/420/300?random=2");
-    background-position: -268px -2px;
-    -webkit-transform: rotateY(180deg);
-            transform: rotateY(180deg);
-  }
-
-  20% {
-    background-image: url("https://picsum.photos/420/300?random=2");
-    background-position: -118px -2px;
-    -webkit-transform: rotateY(0deg);
-            transform: rotateY(0deg);
-  }
-
-  31% {
-    background-image: url("https://picsum.photos/420/300?random=3");
-    background-position: -268px -2px;
-    -webkit-transform: rotateY(180deg);
-            transform: rotateY(180deg);
-  }
-
-  40% {
-    background-image: url("https://picsum.photos/420/300?random=3");
-    background-position: -118px -2px;
-    -webkit-transform: rotateY(0deg);
-            transform: rotateY(0deg);
-  }
-
-  51% {
-    background-image: url("https://picsum.photos/420/300?random=4");
-    background-position: -268px -2px;
-    -webkit-transform: rotateY(180deg);
-            transform: rotateY(180deg);
-  }
-
-  60% {
-    background-image: url("https://picsum.photos/420/300?random=4");
-    background-position: -118px -2px;
-    -webkit-transform: rotateY(0deg);
-            transform: rotateY(0deg);
-  }
-
-  71% {
-    background-image: url("https://picsum.photos/420/300?random=5");
-    background-position: -268px -2px;
-    -webkit-transform: rotateY(180deg);
-            transform: rotateY(180deg);
-  }
-
-  80% {
-    background-image: url("https://picsum.photos/420/300?random=5");
-    background-position: -118px -2px;
-    -webkit-transform: rotateY(0deg);
-            transform: rotateY(0deg);
-  }
-
-  91% {
-    background-image: url("https://picsum.photos/420/300?random=1");
-    background-position: -268px -2px;
-    -webkit-transform: rotateY(180deg);
-            transform: rotateY(180deg);
-  }
-}
-
-@keyframes nextFlip3 {
-  0% {
-    background-image: url("https://picsum.photos/420/300?random=1");
-    background-position: -118px -2px;
-    -webkit-transform: rotateY(0deg);
-            transform: rotateY(0deg);
-  }
-
-  11% {
-    background-image: url("https://picsum.photos/420/300?random=2");
-    background-position: -268px -2px;
-    -webkit-transform: rotateY(180deg);
-            transform: rotateY(180deg);
-  }
-
-  20% {
-    background-image: url("https://picsum.photos/420/300?random=2");
-    background-position: -118px -2px;
-    -webkit-transform: rotateY(0deg);
-            transform: rotateY(0deg);
-  }
-
-  31% {
-    background-image: url("https://picsum.photos/420/300?random=3");
-    background-position: -268px -2px;
-    -webkit-transform: rotateY(180deg);
-            transform: rotateY(180deg);
-  }
-
-  40% {
-    background-image: url("https://picsum.photos/420/300?random=3");
-    background-position: -118px -2px;
-    -webkit-transform: rotateY(0deg);
-            transform: rotateY(0deg);
-  }
-
-  51% {
-    background-image: url("https://picsum.photos/420/300?random=4");
-    background-position: -268px -2px;
-    -webkit-transform: rotateY(180deg);
-            transform: rotateY(180deg);
-  }
-
-  60% {
-    background-image: url("https://picsum.photos/420/300?random=4");
-    background-position: -118px -2px;
-    -webkit-transform: rotateY(0deg);
-            transform: rotateY(0deg);
-  }
-
-  71% {
-    background-image: url("https://picsum.photos/420/300?random=5");
-    background-position: -268px -2px;
-    -webkit-transform: rotateY(180deg);
-            transform: rotateY(180deg);
-  }
-
-  80% {
-    background-image: url("https://picsum.photos/420/300?random=5");
-    background-position: -118px -2px;
-    -webkit-transform: rotateY(0deg);
-            transform: rotateY(0deg);
-  }
-
-  91% {
-    background-image: url("https://picsum.photos/420/300?random=1");
-    background-position: -268px -2px;
-    -webkit-transform: rotateY(180deg);
-            transform: rotateY(180deg);
-  }
-}
-
-@-webkit-keyframes nextFlip4 {
-  0% {
-    background-image: url("https://picsum.photos/420/300?random=1");
-    background-position: -88px -2px;
-    -webkit-transform: rotateY(0deg);
-            transform: rotateY(0deg);
-  }
-
-  11.5% {
-    background-image: url("https://picsum.photos/420/300?random=2");
-    background-position: -298px -2px;
-    -webkit-transform: rotateY(180deg);
-            transform: rotateY(180deg);
-  }
-
-  20% {
-    background-image: url("https://picsum.photos/420/300?random=2");
-    background-position: -88px -2px;
-    -webkit-transform: rotateY(0deg);
-            transform: rotateY(0deg);
-  }
-
-  31.5% {
-    background-image: url("https://picsum.photos/420/300?random=3");
-    background-position: -298px -2px;
-    -webkit-transform: rotateY(180deg);
-            transform: rotateY(180deg);
-  }
-
-  40% {
-    background-image: url("https://picsum.photos/420/300?random=3");
-    background-position: -88px -2px;
-    -webkit-transform: rotateY(0deg);
-            transform: rotateY(0deg);
-  }
-
-  51.5% {
-    background-image: url("https://picsum.photos/420/300?random=4");
-    background-position: -298px -2px;
-    -webkit-transform: rotateY(180deg);
-            transform: rotateY(180deg);
-  }
-
-  60% {
-    background-image: url("https://picsum.photos/420/300?random=4");
-    background-position: -88px -2px;
-    -webkit-transform: rotateY(0deg);
-            transform: rotateY(0deg);
-  }
-
-  71.5% {
-    background-image: url("https://picsum.photos/420/300?random=5");
-    background-position: -298px -2px;
-    -webkit-transform: rotateY(180deg);
-            transform: rotateY(180deg);
-  }
-
-  80% {
-    background-image: url("https://picsum.photos/420/300?random=5");
-    background-position: -88px -2px;
-    -webkit-transform: rotateY(0deg);
-            transform: rotateY(0deg);
-  }
-
-  91.5% {
-    background-image: url("https://picsum.photos/420/300?random=1");
-    background-position: -298px -2px;
-    -webkit-transform: rotateY(180deg);
-            transform: rotateY(180deg);
-  }
-}
-
-@keyframes nextFlip4 {
-  0% {
-    background-image: url("https://picsum.photos/420/300?random=1");
-    background-position: -88px -2px;
-    -webkit-transform: rotateY(0deg);
-            transform: rotateY(0deg);
-  }
-
-  11.5% {
-    background-image: url("https://picsum.photos/420/300?random=2");
-    background-position: -298px -2px;
-    -webkit-transform: rotateY(180deg);
-            transform: rotateY(180deg);
-  }
-
-  20% {
-    background-image: url("https://picsum.photos/420/300?random=2");
-    background-position: -88px -2px;
-    -webkit-transform: rotateY(0deg);
-            transform: rotateY(0deg);
-  }
-
-  31.5% {
-    background-image: url("https://picsum.photos/420/300?random=3");
-    background-position: -298px -2px;
-    -webkit-transform: rotateY(180deg);
-            transform: rotateY(180deg);
-  }
-
-  40% {
-    background-image: url("https://picsum.photos/420/300?random=3");
-    background-position: -88px -2px;
-    -webkit-transform: rotateY(0deg);
-            transform: rotateY(0deg);
-  }
-
-  51.5% {
-    background-image: url("https://picsum.photos/420/300?random=4");
-    background-position: -298px -2px;
-    -webkit-transform: rotateY(180deg);
-            transform: rotateY(180deg);
-  }
-
-  60% {
-    background-image: url("https://picsum.photos/420/300?random=4");
-    background-position: -88px -2px;
-    -webkit-transform: rotateY(0deg);
-            transform: rotateY(0deg);
-  }
-
-  71.5% {
-    background-image: url("https://picsum.photos/420/300?random=5");
-    background-position: -298px -2px;
-    -webkit-transform: rotateY(180deg);
-            transform: rotateY(180deg);
-  }
-
-  80% {
-    background-image: url("https://picsum.photos/420/300?random=5");
-    background-position: -88px -2px;
-    -webkit-transform: rotateY(0deg);
-            transform: rotateY(0deg);
-  }
-
-  91.5% {
-    background-image: url("https://picsum.photos/420/300?random=1");
-    background-position: -298px -2px;
-    -webkit-transform: rotateY(180deg);
-            transform: rotateY(180deg);
-  }
-}
-
-@-webkit-keyframes nextFlip5 {
-  0% {
-    background-image: url("https://picsum.photos/420/300?random=1");
-    background-position: -58px -2px;
-    -webkit-transform: rotateY(0deg);
-            transform: rotateY(0deg);
-  }
-
-  12% {
-    background-image: url("https://picsum.photos/420/300?random=2");
-    background-position: -328px -2px;
-    -webkit-transform: rotateY(180deg);
-            transform: rotateY(180deg);
-  }
-
-  20% {
-    background-image: url("https://picsum.photos/420/300?random=2");
-    background-position: -58px -2px;
-    -webkit-transform: rotateY(0deg);
-            transform: rotateY(0deg);
-  }
-
-  32% {
-    background-image: url("https://picsum.photos/420/300?random=3");
-    background-position: -328px -2px;
-    -webkit-transform: rotateY(180deg);
-            transform: rotateY(180deg);
-  }
-
-  40% {
-    background-image: url("https://picsum.photos/420/300?random=3");
-    background-position: -58px -2px;
-    -webkit-transform: rotateY(0deg);
-            transform: rotateY(0deg);
-  }
-
-  52% {
-    background-image: url("https://picsum.photos/420/300?random=4");
-    background-position: -328px -2px;
-    -webkit-transform: rotateY(180deg);
-            transform: rotateY(180deg);
-  }
-
-  60% {
-    background-image: url("https://picsum.photos/420/300?random=4");
-    background-position: -58px -2px;
-    -webkit-transform: rotateY(0deg);
-            transform: rotateY(0deg);
-  }
-
-  72% {
-    background-image: url("https://picsum.photos/420/300?random=5");
-    background-position: -328px -2px;
-    -webkit-transform: rotateY(180deg);
-            transform: rotateY(180deg);
-  }
-
-  80% {
-    background-image: url("https://picsum.photos/420/300?random=5");
-    background-position: -58px -2px;
-    -webkit-transform: rotateY(0deg);
-            transform: rotateY(0deg);
-  }
-
-  92% {
-    background-image: url("https://picsum.photos/420/300?random=1");
-    background-position: -328px -2px;
-    -webkit-transform: rotateY(180deg);
-            transform: rotateY(180deg);
-  }
-}
-
-@keyframes nextFlip5 {
-  0% {
-    background-image: url("https://picsum.photos/420/300?random=1");
-    background-position: -58px -2px;
-    -webkit-transform: rotateY(0deg);
-            transform: rotateY(0deg);
-  }
-
-  12% {
-    background-image: url("https://picsum.photos/420/300?random=2");
-    background-position: -328px -2px;
-    -webkit-transform: rotateY(180deg);
-            transform: rotateY(180deg);
-  }
-
-  20% {
-    background-image: url("https://picsum.photos/420/300?random=2");
-    background-position: -58px -2px;
-    -webkit-transform: rotateY(0deg);
-            transform: rotateY(0deg);
-  }
-
-  32% {
-    background-image: url("https://picsum.photos/420/300?random=3");
-    background-position: -328px -2px;
-    -webkit-transform: rotateY(180deg);
-            transform: rotateY(180deg);
-  }
-
-  40% {
-    background-image: url("https://picsum.photos/420/300?random=3");
-    background-position: -58px -2px;
-    -webkit-transform: rotateY(0deg);
-            transform: rotateY(0deg);
-  }
-
-  52% {
-    background-image: url("https://picsum.photos/420/300?random=4");
-    background-position: -328px -2px;
-    -webkit-transform: rotateY(180deg);
-            transform: rotateY(180deg);
-  }
-
-  60% {
-    background-image: url("https://picsum.photos/420/300?random=4");
-    background-position: -58px -2px;
-    -webkit-transform: rotateY(0deg);
-            transform: rotateY(0deg);
-  }
-
-  72% {
-    background-image: url("https://picsum.photos/420/300?random=5");
-    background-position: -328px -2px;
-    -webkit-transform: rotateY(180deg);
-            transform: rotateY(180deg);
-  }
-
-  80% {
-    background-image: url("https://picsum.photos/420/300?random=5");
-    background-position: -58px -2px;
-    -webkit-transform: rotateY(0deg);
-            transform: rotateY(0deg);
-  }
-
-  92% {
-    background-image: url("https://picsum.photos/420/300?random=1");
-    background-position: -328px -2px;
-    -webkit-transform: rotateY(180deg);
-            transform: rotateY(180deg);
-  }
-}
-
-@-webkit-keyframes nextFlip6 {
-  0% {
-    background-image: url("https://picsum.photos/420/300?random=1");
-    background-position: -28px -2px;
-    -webkit-transform: rotateY(0deg);
-            transform: rotateY(0deg);
-  }
-
-  12.5% {
-    background-image: url("https://picsum.photos/420/300?random=2");
-    background-position: -358px -2px;
-    -webkit-transform: rotateY(180deg);
-            transform: rotateY(180deg);
-  }
-
-  20% {
-    background-image: url("https://picsum.photos/420/300?random=2");
-    background-position: -28px -2px;
-    -webkit-transform: rotateY(0deg);
-            transform: rotateY(0deg);
-  }
-
-  32.5% {
-    background-image: url("https://picsum.photos/420/300?random=3");
-    background-position: -358px -2px;
-    -webkit-transform: rotateY(180deg);
-            transform: rotateY(180deg);
-  }
-
-  40% {
-    background-image: url("https://picsum.photos/420/300?random=3");
-    background-position: -28px -2px;
-    -webkit-transform: rotateY(0deg);
-            transform: rotateY(0deg);
-  }
-
-  52.5% {
-    background-image: url("https://picsum.photos/420/300?random=4");
-    background-position: -358px -2px;
-    -webkit-transform: rotateY(180deg);
-            transform: rotateY(180deg);
-  }
-
-  60% {
-    background-image: url("https://picsum.photos/420/300?random=4");
-    background-position: -28px -2px;
-    -webkit-transform: rotateY(0deg);
-            transform: rotateY(0deg);
-  }
-
-  72.5% {
-    background-image: url("https://picsum.photos/420/300?random=5");
-    background-position: -358px -2px;
-    -webkit-transform: rotateY(180deg);
-            transform: rotateY(180deg);
-  }
-
-  80% {
-    background-image: url("https://picsum.photos/420/300?random=5");
-    background-position: -28px -2px;
-    -webkit-transform: rotateY(0deg);
-            transform: rotateY(0deg);
-  }
-
-  92.5% {
-    background-image: url("https://picsum.photos/420/300?random=1");
-    background-position: -358px -2px;
-    -webkit-transform: rotateY(180deg);
-            transform: rotateY(180deg);
-  }
-}
-
-@keyframes nextFlip6 {
-  0% {
-    background-image: url("https://picsum.photos/420/300?random=1");
-    background-position: -28px -2px;
-    -webkit-transform: rotateY(0deg);
-            transform: rotateY(0deg);
-  }
-
-  12.5% {
-    background-image: url("https://picsum.photos/420/300?random=2");
-    background-position: -358px -2px;
-    -webkit-transform: rotateY(180deg);
-            transform: rotateY(180deg);
-  }
-
-  20% {
-    background-image: url("https://picsum.photos/420/300?random=2");
-    background-position: -28px -2px;
-    -webkit-transform: rotateY(0deg);
-            transform: rotateY(0deg);
-  }
-
-  32.5% {
-    background-image: url("https://picsum.photos/420/300?random=3");
-    background-position: -358px -2px;
-    -webkit-transform: rotateY(180deg);
-            transform: rotateY(180deg);
-  }
-
-  40% {
-    background-image: url("https://picsum.photos/420/300?random=3");
-    background-position: -28px -2px;
-    -webkit-transform: rotateY(0deg);
-            transform: rotateY(0deg);
-  }
-
-  52.5% {
-    background-image: url("https://picsum.photos/420/300?random=4");
-    background-position: -358px -2px;
-    -webkit-transform: rotateY(180deg);
-            transform: rotateY(180deg);
-  }
-
-  60% {
-    background-image: url("https://picsum.photos/420/300?random=4");
-    background-position: -28px -2px;
-    -webkit-transform: rotateY(0deg);
-            transform: rotateY(0deg);
-  }
-
-  72.5% {
-    background-image: url("https://picsum.photos/420/300?random=5");
-    background-position: -358px -2px;
-    -webkit-transform: rotateY(180deg);
-            transform: rotateY(180deg);
-  }
-
-  80% {
-    background-image: url("https://picsum.photos/420/300?random=5");
-    background-position: -28px -2px;
-    -webkit-transform: rotateY(0deg);
-            transform: rotateY(0deg);
-  }
-
-  92.5% {
-    background-image: url("https://picsum.photos/420/300?random=1");
-    background-position: -358px -2px;
-    -webkit-transform: rotateY(180deg);
-            transform: rotateY(180deg);
-  }
-}
-
-@-webkit-keyframes nextFlip7 {
-  0% {
-    background-image: url("https://picsum.photos/420/300?random=1");
-    background-position: -2px -2px;
-    -webkit-transform: rotateY(0deg);
-            transform: rotateY(0deg);
-  }
-
-  13% {
-    background-image: url("https://picsum.photos/420/300?random=2");
-    background-position: -388px -2px;
-    -webkit-transform: rotateY(180deg);
-            transform: rotateY(180deg);
-  }
-
-  20% {
-    background-image: url("https://picsum.photos/420/300?random=2");
-    background-position: -2px -2px;
-    -webkit-transform: rotateY(0deg);
-            transform: rotateY(0deg);
-  }
-
-  33% {
-    background-image: url("https://picsum.photos/420/300?random=3");
-    background-position: -388px -2px;
-    -webkit-transform: rotateY(180deg);
-            transform: rotateY(180deg);
-  }
-
-  40% {
-    background-image: url("https://picsum.photos/420/300?random=3");
-    background-position: -2px -2px;
-    -webkit-transform: rotateY(0deg);
-            transform: rotateY(0deg);
-  }
-
-  53% {
-    background-image: url("https://picsum.photos/420/300?random=4");
-    background-position: -388px -2px;
-    -webkit-transform: rotateY(180deg);
-            transform: rotateY(180deg);
-  }
-
-  60% {
-    background-image: url("https://picsum.photos/420/300?random=4");
-    background-position: -2px -2px;
-    -webkit-transform: rotateY(0deg);
-            transform: rotateY(0deg);
-  }
-
-  73% {
-    background-image: url("https://picsum.photos/420/300?random=5");
-    background-position: -388px -2px;
-    -webkit-transform: rotateY(180deg);
-            transform: rotateY(180deg);
-  }
-
-  80% {
-    background-image: url("https://picsum.photos/420/300?random=5");
-    background-position: -2px -2px;
-    -webkit-transform: rotateY(0deg);
-            transform: rotateY(0deg);
-  }
-
-  93% {
-    background-image: url("https://picsum.photos/420/300?random=1");
-    background-position: -388px -2px;
-    -webkit-transform: rotateY(180deg);
-            transform: rotateY(180deg);
-  }
-}
-
-@keyframes nextFlip7 {
-  0% {
-    background-image: url("https://picsum.photos/420/300?random=1");
-    background-position: -2px -2px;
-    -webkit-transform: rotateY(0deg);
-            transform: rotateY(0deg);
-  }
-
-  13% {
-    background-image: url("https://picsum.photos/420/300?random=2");
-    background-position: -388px -2px;
-    -webkit-transform: rotateY(180deg);
-            transform: rotateY(180deg);
-  }
-
-  20% {
-    background-image: url("https://picsum.photos/420/300?random=2");
-    background-position: -2px -2px;
-    -webkit-transform: rotateY(0deg);
-            transform: rotateY(0deg);
-  }
-
-  33% {
-    background-image: url("https://picsum.photos/420/300?random=3");
-    background-position: -388px -2px;
-    -webkit-transform: rotateY(180deg);
-            transform: rotateY(180deg);
-  }
-
-  40% {
-    background-image: url("https://picsum.photos/420/300?random=3");
-    background-position: -2px -2px;
-    -webkit-transform: rotateY(0deg);
-            transform: rotateY(0deg);
-  }
-
-  53% {
-    background-image: url("https://picsum.photos/420/300?random=4");
-    background-position: -388px -2px;
-    -webkit-transform: rotateY(180deg);
-            transform: rotateY(180deg);
-  }
-
-  60% {
-    background-image: url("https://picsum.photos/420/300?random=4");
-    background-position: -2px -2px;
-    -webkit-transform: rotateY(0deg);
-            transform: rotateY(0deg);
-  }
-
-  73% {
-    background-image: url("https://picsum.photos/420/300?random=5");
-    background-position: -388px -2px;
-    -webkit-transform: rotateY(180deg);
-            transform: rotateY(180deg);
-  }
-
-  80% {
-    background-image: url("https://picsum.photos/420/300?random=5");
-    background-position: -2px -2px;
-    -webkit-transform: rotateY(0deg);
-            transform: rotateY(0deg);
-  }
-
-  93% {
-    background-image: url("https://picsum.photos/420/300?random=1");
-    background-position: -388px -2px;
-    -webkit-transform: rotateY(180deg);
-            transform: rotateY(180deg);
-  }
-}
-
 /**
  * Swiper 7.2.0
  * Most modern mobile touch slider and framework with hardware accelerated transitions
@@ -2741,9 +1474,8 @@ body::after {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   color: var(--swiper-navigation-color, var(--swiper-theme-color));
 }
 
@@ -2794,6 +1526,7 @@ body::after {
 .swiper-pagination {
   position: absolute;
   text-align: center;
+  padding: 0 -30px 0 -30px;
   -webkit-transition: 0.3s opacity;
   -o-transition: 0.3s opacity;
   transition: 0.3s opacity;
@@ -3572,6 +2305,86 @@ button.swiper-pagination-bullet {
   }
 }
 
+@media (hover: hover) and (min-width: 61.99875em) {
+  .card:after {
+    -webkit-transform: translateY(0);
+        -ms-transform: translateY(0);
+            transform: translateY(0);
+  }
+
+  .card_content {
+    -webkit-transform: translateY(calc(100% - 4.5rem));
+        -ms-transform: translateY(calc(100% - 4.5rem));
+            transform: translateY(calc(100% - 4.5rem));
+  }
+
+  .card_content > *:not(.card_title) {
+    opacity: 0;
+    -webkit-transform: translateY(1rem);
+        -ms-transform: translateY(1rem);
+            transform: translateY(1rem);
+    -webkit-transition: opacity 700ms cubic-bezier(0.19, 1, 0.22, 1), -webkit-transform 700ms cubic-bezier(0.19, 1, 0.22, 1);
+    transition: opacity 700ms cubic-bezier(0.19, 1, 0.22, 1), -webkit-transform 700ms cubic-bezier(0.19, 1, 0.22, 1);
+    -o-transition: transform 700ms cubic-bezier(0.19, 1, 0.22, 1), opacity 700ms cubic-bezier(0.19, 1, 0.22, 1);
+    transition: transform 700ms cubic-bezier(0.19, 1, 0.22, 1), opacity 700ms cubic-bezier(0.19, 1, 0.22, 1);
+    transition: transform 700ms cubic-bezier(0.19, 1, 0.22, 1), opacity 700ms cubic-bezier(0.19, 1, 0.22, 1), -webkit-transform 700ms cubic-bezier(0.19, 1, 0.22, 1);
+  }
+
+  .card:hover,
+  .card:focus-within {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+
+  .card:hover:before,
+  .card:focus-within:before {
+    -webkit-transform: translateY(-4%);
+        -ms-transform: translateY(-4%);
+            transform: translateY(-4%);
+  }
+
+  .card:hover:after,
+  .card:focus-within:after {
+    -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+  }
+
+  .card:hover .card_content,
+  .card:focus-within .card_content {
+    -webkit-transform: translateY(0);
+        -ms-transform: translateY(0);
+            transform: translateY(0);
+  }
+
+  .card:hover .card_content > *:not(.card_title),
+  .card:focus-within .card_content > *:not(.card_title) {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+        -ms-transform: translateY(0);
+            transform: translateY(0);
+    -webkit-transition-delay: 87.5ms;
+         -o-transition-delay: 87.5ms;
+            transition-delay: 87.5ms;
+  }
+
+  .card:focus-within:before,
+  .card:focus-within:after,
+  .card:focus-within .content,
+  .card:focus-within .content > *:not(.title) {
+    -webkit-transition-duration: 0s;
+         -o-transition-duration: 0s;
+            transition-duration: 0s;
+  }
+}
+
+@media (max-width: 61.99875em) {
+  .card {
+    height: 350px;
+  }
+}
+
 @media (max-width: 47.99875em) {
   .title {
     font-size: 28px;
@@ -3720,8 +2533,16 @@ button.swiper-pagination-bullet {
   .contacts {
     padding: 50px 0;
   }
-
-  .book {
-    display: none;
-  }
 }
+
+.webp .react:before{ background-image: url(img/portfolio/React.webp); }
+
+.webp .pizza:before{ background-image: url(img/portfolio/Pizzeria.webp); }
+
+.webp .sedona:before{ background-image: url(img/portfolio/Sedona.webp); }
+
+.webp .blog:before{ background-image: url(img/portfolio/Blog.webp); }
+
+.webp .shop:before{ background-image: url(img/portfolio/Delivery_food.webp); }
+
+.webp .space:before{ background-image: url(img/portfolio/Space_X.webp); }
