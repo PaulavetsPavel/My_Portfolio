@@ -2,6 +2,7 @@
 
 @import url(https://fonts.googleapis.com/css?family=Cuprum:regular,700);
 
+@charset "UTF-8";
 
 * {
   padding: 0;
@@ -84,6 +85,19 @@ h6 {
       touch-action: none;
 }
 
+.wrapper {
+  min-height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  overflow: hidden;
+  position: relative;
+}
+
 .wrapper > main {
   -webkit-box-flex: 1;
       -ms-flex: 1 1 auto;
@@ -94,6 +108,12 @@ h6 {
   min-width: 0;
 }
 
+/*
+(i) Стили будут применяться ко 
+всем классам содержащим *__container
+Например header__container, main__container и т.д.
+Снипет (HTML): cnt
+*/
 
 [class*=__container] {
   max-width: 60.625rem;
@@ -152,6 +172,26 @@ body::after {
           transform: scale(1);
 }
 
+.popup__wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 100%;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  width: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
 
 .popup__content {
   visibility: hidden;
@@ -161,6 +201,7 @@ body::after {
   -webkit-transition: -webkit-transform 0.3s ease 0s;
   transition: -webkit-transform 0.3s ease 0s;
   -o-transition: transform 0.3s ease 0s;
+  transition: transform 0.3s ease 0s;
   transition: transform 0.3s ease 0s, -webkit-transform 0.3s ease 0s;
   background-color: #eee;
   padding: 40px 60px;
@@ -315,6 +356,33 @@ body::after {
           flex-direction: row-reverse;
 }
 
+.menu__body {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 100%;
+          flex: 1 1 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.menu__list {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 .menu__item {
   height: 100%;
 }
@@ -333,6 +401,8 @@ body::after {
 }
 
 .menu__lang {
+  text-transform: uppercase;
+  -webkit-transform: rotate(180deg);
       -ms-transform: rotate(180deg);
           transform: rotate(180deg);
   -webkit-writing-mode: vertical-rl;
@@ -342,6 +412,7 @@ body::after {
   font-weight: 700;
   font-size: 1.5rem;
   margin: 10% 15% 0 0;
+  -ms-flex-item-align: end;
       align-self: flex-end;
 }
 
@@ -378,10 +449,14 @@ body::after {
   font-family: "Cuprum", sans-serif;
   font-size: 1.45rem;
   line-height: 1.3;
+  -ms-flex-item-align: end;
       align-self: flex-end;
 }
 
 .main__lang {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
   text-transform: uppercase;
   -webkit-transform: rotate(180deg);
       -ms-transform: rotate(180deg);
@@ -418,7 +493,11 @@ body::after {
 }
 
 .about-me__info {
-  font-family: "Cuprum",sans-serif;
+  font-family: "Cuprum", sans-serif;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
@@ -470,6 +549,22 @@ body::after {
       -ms-flex: 0 1 100px;
           flex: 0 1 100px;
   height: 90px;
+}
+
+.skills__item figure {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .skills__item figure img {
@@ -529,6 +624,7 @@ body::after {
   -webkit-transition: -webkit-transform 1050ms cubic-bezier(0.19, 1, 0.22, 1);
   transition: -webkit-transform 1050ms cubic-bezier(0.19, 1, 0.22, 1);
   -o-transition: transform 1050ms cubic-bezier(0.19, 1, 0.22, 1);
+  transition: transform 1050ms cubic-bezier(0.19, 1, 0.22, 1);
   transition: transform 1050ms cubic-bezier(0.19, 1, 0.22, 1), -webkit-transform 1050ms cubic-bezier(0.19, 1, 0.22, 1);
   pointer-events: none;
 }
@@ -551,10 +647,15 @@ body::after {
   -webkit-transition: -webkit-transform 1400ms cubic-bezier(0.19, 1, 0.22, 1);
   transition: -webkit-transform 1400ms cubic-bezier(0.19, 1, 0.22, 1);
   -o-transition: transform 1400ms cubic-bezier(0.19, 1, 0.22, 1);
+  transition: transform 1400ms cubic-bezier(0.19, 1, 0.22, 1);
   transition: transform 1400ms cubic-bezier(0.19, 1, 0.22, 1), -webkit-transform 1400ms cubic-bezier(0.19, 1, 0.22, 1);
 }
 
 .card_content {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -567,6 +668,7 @@ body::after {
   -webkit-transition: -webkit-transform 700ms cubic-bezier(0.19, 1, 0.22, 1);
   transition: -webkit-transform 700ms cubic-bezier(0.19, 1, 0.22, 1);
   -o-transition: transform 700ms cubic-bezier(0.19, 1, 0.22, 1);
+  transition: transform 700ms cubic-bezier(0.19, 1, 0.22, 1);
   transition: transform 700ms cubic-bezier(0.19, 1, 0.22, 1), -webkit-transform 700ms cubic-bezier(0.19, 1, 0.22, 1);
   z-index: 1;
 }
@@ -609,6 +711,9 @@ body::after {
   outline-offset: 3px;
 }
 
+.no-webp .bank:before{
+  background-image: url("../img/portfolio/Bank.png"); }
+
 .no-webp .react:before{
   background-image: url("../img/portfolio/React.png"); }
 
@@ -636,9 +741,39 @@ body::after {
 }
 
 .contacts__text {
-  font-family: "Cuprum",sans-serif;
+  font-family: "Cuprum", sans-serif;
   text-align: center;
   margin: 30px 0;
+}
+
+.contacts__button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 0 0 30px 0;
+}
+
+.contacts__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-size: 0;
+  list-style: none;
+  margin: 0 auto;
+  text-align: center;
+  max-width: 140px;
 }
 
 .contacts__list a,
@@ -652,6 +787,16 @@ body::after {
 }
 
 .list_item {
+  list-style-type: none;
+  -ms-flex-preferred-size: 60px;
+      flex-basis: 60px;
+  min-height: 60px;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
           align-items: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
@@ -662,7 +807,9 @@ body::after {
       -ms-transform: translateY(0);
           transform: translateY(0);
   -webkit-transition: opacity 0.2s ease, -webkit-transform 0.5s ease;
+  transition: opacity 0.2s ease, -webkit-transform 0.5s ease;
   -o-transition: transform 0.5s ease, opacity 0.2s ease;
+  transition: transform 0.5s ease, opacity 0.2s ease;
   transition: transform 0.5s ease, opacity 0.2s ease, -webkit-transform 0.5s ease;
   cursor: pointer;
 }
@@ -747,7 +894,9 @@ body::after {
       -ms-transform: scale(1.25);
           transform: scale(1.25);
   -webkit-transition: background-color 0.5s, -webkit-transform 0.5s ease-out;
+  transition: background-color 0.5s, -webkit-transform 0.5s ease-out;
   -o-transition: background-color 0.5s, transform 0.5s ease-out;
+  transition: background-color 0.5s, transform 0.5s ease-out;
   transition: background-color 0.5s, transform 0.5s ease-out, -webkit-transform 0.5s ease-out;
 }
 
@@ -794,6 +943,7 @@ body::after {
   -webkit-transition-property: -webkit-transform;
   transition-property: -webkit-transform;
   -o-transition-property: transform;
+  transition-property: transform;
   transition-property: transform, -webkit-transform;
   -webkit-box-sizing: content-box;
           box-sizing: content-box;
@@ -805,6 +955,7 @@ body::after {
 }
 
 .swiper-slide {
+  -ms-flex-negative: 0;
       flex-shrink: 0;
   width: 100%;
   height: auto;
@@ -812,6 +963,7 @@ body::after {
   -webkit-transition-property: -webkit-transform;
   transition-property: -webkit-transform;
   -o-transition-property: transform;
+  transition-property: transform;
   transition-property: transform, -webkit-transform;
 }
 
@@ -820,6 +972,23 @@ body::after {
   max-height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  position: absolute;
+  top: 50%;
+  z-index: 10;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  color: #007aff;
 }
 
 .swiper-button-next.swiper-button-disabled,
@@ -915,6 +1084,7 @@ body::after {
 
   .menu__lang {
     display: none;
+    -ms-flex-item-align: start;
         align-self: flex-start;
   }
 }
@@ -938,7 +1108,9 @@ body::after {
         -ms-transform: translateY(1rem);
             transform: translateY(1rem);
     -webkit-transition: opacity 700ms cubic-bezier(0.19, 1, 0.22, 1), -webkit-transform 700ms cubic-bezier(0.19, 1, 0.22, 1);
+    transition: opacity 700ms cubic-bezier(0.19, 1, 0.22, 1), -webkit-transform 700ms cubic-bezier(0.19, 1, 0.22, 1);
     -o-transition: transform 700ms cubic-bezier(0.19, 1, 0.22, 1), opacity 700ms cubic-bezier(0.19, 1, 0.22, 1);
+    transition: transform 700ms cubic-bezier(0.19, 1, 0.22, 1), opacity 700ms cubic-bezier(0.19, 1, 0.22, 1);
     transition: transform 700ms cubic-bezier(0.19, 1, 0.22, 1), opacity 700ms cubic-bezier(0.19, 1, 0.22, 1), -webkit-transform 700ms cubic-bezier(0.19, 1, 0.22, 1);
   }
 
@@ -1041,6 +1213,22 @@ body::after {
     -webkit-transform: translate(0, 0);
         -ms-transform: translate(0, 0);
             transform: translate(0, 0);
+  }
+
+  .menu__list {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    height: auto;
+    z-index: 10;
+    padding: 60px 10px 40px 40px;
   }
 
   .menu__item {
@@ -1159,6 +1347,8 @@ body::after {
     padding: 50px 0;
   }
 }
+
+.webp .bank:before{ background-image: url(../img/portfolio/Bank.webp); }
 
 .webp .react:before{ background-image: url(../img/portfolio/React.webp); }
 
